@@ -14,12 +14,15 @@ app.use(morgan('dev'));
 
 app.use(express.static(__dirname + '/public'));
 
+app.use('/api',require('./app/routes/userRoute')() );
+
 mongoose.connect(config.database, function(err) {
 	if(err) {
 		throw err
-	}else {	
+	}else if(config.port!=undefined && typeof config.port=="number") {	
 			http.listen(config.port, function(err) {
 				if(err) {
+					console.log(err)
 					throw err;
 				} else {
 					console.log("Database connected and Listening on port "+ config.port);
@@ -28,4 +31,3 @@ mongoose.connect(config.database, function(err) {
 	}
 });
 
- 
