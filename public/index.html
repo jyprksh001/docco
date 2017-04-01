@@ -1,98 +1,32 @@
-<html >
-<head>
-  <meta charset="UTF-8">
-  <title>FAcebunker</title>
-      <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-  <html lang="en" ng-app="StarterApp">
-  <head>
-    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/0.8.3/angular-material.min.css">
-  </head>
-  <body layout="row" ng-controller="AppCtrl" style="background-color:#eee;">
-    <div layout="column" class="relative" layout-fill role="main">
-    <md-toolbar ng-show="!showSearch" style="background-color: #415280">
-       <form method="post" action="/api/login">  
-         <div class="md-toolbar-tools">
-        <img  src="/img/facebunkerlogin.jpg" style="width: 180px;height: 50px; margin-left:-15px; "/>    <span flex></span>
-           <div layout="row" style="margin-top: 2px;">
-     
-      <md-input-container class="textfield" flex="50" style=" float :left; padding-right: 60px; " >
-          <label>Username</label><br>
-          <input type="text" required name="username" >
-        </md-input-container>
-           <md-input-container class="textfield" flex="50" >
-          <label>Password</label><br>
-          <input type="password" required name="password">
-        </md-input-container>
-      
+<html lang="en" >
+   <head>
+      <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.min.js"></script>
+      <script src="js/index.js"></script>
+       <link rel="stylesheet" href="css/style.css">
         
-        </div>
- <md-item layout class="inset">
-                            <md-button layout layout-align="start center" flex class="md-primary" type="submit">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="2 2 24 14"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
-                            </md-button>
-                        </md-item> </form>
-           </div></md-toolbar>
-            <div layout="row"  layout-align="center end">
-           <h2>Sign Up</h2></div>
-           <div layout="column"  layout-align="end end" >
-    
-     <md-card style="width: 500px;height: 500px;">
-                    <md-card-content>
-   <form method="post" action="/api/signup">
-      <div layout="row">
-         
-        <md-input-container class="textfield" flex="50" >
-          <label>name</label><br>
-          <input type="text" required name="name" >
-        </md-input-container>
-          
+   </head>
+   <body ng-app="facebunker" ng-controller="dateController as ctrl" style="background-color: #fff"> 
+        <md-toolbar class="md-hue-2" style="background-color: #0f253c;margin-top: -20px">
+     <div layout="row" layout-align="end start" style="margin-top: 30px">
+ 
+ <md-item>
+         <md-item-content>
+         <a  href="#login" >login</a></md-item-content>
+          <md-item-content>
+       <a href="#register" >register</a> </md-item-content>
+             </md-item>
+</div>
         
-      </div>
-      <div layout="row">
-           <md-input-container class="textfield" flex="50">
-          <label>Username</label><br>
-          <input type="text" required  name="username" > 
-        </md-input-container>
        
-      </div>
-      <div layout="row">
-        <md-input-container class="textfield" flex="50">
-         <label>password</label><br>
-          <input type="password" required  name="password">
-        </md-input-container></div>
-        <div><br><br><br><br>
-          <md-item layout class="inset" style="margin: auto;">
-                            <md-button layout layout-align="start center" flex class="md-primary" type="submit">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>Register
-                            </md-button>
-                        </md-item>
-        </form>
-        
-      </div> 
-      <br>
-       <div layout="row">
-        
-       </div></md-card-content></md-card></div></div></body></html>
-
-                    </md-card-content>
-                  </md-card>
-     
-                      
-    </div>
-    <!-- Angular Material Dependencies -->
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular-animate.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular-aria.min.js"></script>
-
-    <script src="http://ajax.googleapis.com/ajax/libs/angular_material/0.8.3/angular-material.min.js"></script>
-    
-    <script src="http://cdn.jsdelivr.net/angular-material-icons/0.4.0/angular-material-icons.min.js"></script> 
-  </body>
-</html>
-  
-    <script src="js/index.js"></script>
-
-</body>
+          </md-toolbar> <ng-view></ng-view>
+           
+         </md-content>
+	   </div>
+   </body>
 </html>

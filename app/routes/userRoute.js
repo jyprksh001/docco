@@ -19,12 +19,9 @@ function createToken(user) {
 }
 
 module.exports = function() {
-// Get Homepage
 
 
 	var api = express.Router();
-
-
 
 	api.post('/signup', function(req, res) {
 		console.log("req");
@@ -39,7 +36,7 @@ module.exports = function() {
 				res.send(err);
 				return;
 			}
-           
+
 			res.json({ 
 				success: true,
 				message: 'User has been created!',
@@ -71,7 +68,11 @@ module.exports = function() {
 				
 					var token = createToken(user);
 
-				res.redirect('/menu.html');
+					res.json({
+						success: true,
+						message: "Successfuly login!",
+						token: token
+					});
 				}
 			}
 		});
